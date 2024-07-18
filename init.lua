@@ -6,7 +6,7 @@ vim.g.maplocalleader = ' '
 vim.g.have_nerd_font = true
 -- Make line numbers default
 vim.opt.number = true
--- You can also add relative line numbers, to help with jumping.
+-- You can also add relative line numbers, to help with jumping.ini
 --  Experiment for yourself to see if you like it!
 vim.opt.relativenumber = true
 -- Enable mouse mode, can be useful for resizing splits for example!
@@ -68,6 +68,7 @@ vim.keymap.set('n', ']d', vim.diagnostic.goto_next, { desc = 'Go to next [D]iagn
 vim.keymap.set('n', '<leader>e', vim.diagnostic.open_float, { desc = 'Show diagnostic [E]rror messages' })
 vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagnostic [Q]uickfix list' })
 vim.keymap.set('n', '<leader>o', ':NvimTreeOpen<Enter>', { desc = '[O]pen nvim tree' })
+vim.keymap.set('n', '<leader>c', ':NvimTreeClose<Enter>', { desc = '[C]lose nvim tree' })
 -- Exit terminal mode in the builtin terminal with a shortcut that is a bit easier
 -- for people to discover. Otherwise, you normally need to press <C-\><C-n>, which
 -- is not what someone will guess without a bit more experience.
@@ -124,7 +125,6 @@ require('lazy').setup({
   'tpope/vim-sleuth', -- Detect tabstop and shiftwidth automatically
   'rstacruz/vim-closer',
   'ThePrimeagen/vim-be-good',
-
   -- NOTE: Plugins can also be added by using a table,
   -- with the first argument being the link and the following
   -- keys can be used to configure plugin behavior/loading/etc.
