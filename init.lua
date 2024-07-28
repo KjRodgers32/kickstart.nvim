@@ -59,6 +59,8 @@ vim.g.loaded_netrwPlugin = 1
 -- [[ Basic Keymaps ]]
 --  See `:help vim.keymap.set()`
 
+vim.opt.spelllang = 'en_us'
+vim.opt.spell = true
 -- Set highlight on search, but clear on pressing <Esc> in normal mode
 vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>')
 
@@ -86,6 +88,10 @@ vim.keymap.set('n', '<C-j>', '<C-w><C-j>', { desc = 'Move focus to the lower win
 vim.keymap.set('n', '<C-k>', '<C-w><C-k>', { desc = 'Move focus to the upper window' })
 
 vim.keymap.set('v', 'eb', 'xi<Enter><Enter><Esc>ki<Space><Space><Space><Space>', { desc = 'Clear highlighted block and set cursor to edit' })
+
+local opts = { silent = true, noremap = true, expr = true, replace_keycodes = false }
+vim.keymap.set('i', '<TAB>', 'coc#pum#visible() ? coc#pum#next(1) : v:lua.check_back_space() ? "<TAB>" : coc#refresh()', opts)
+vim.keymap.set('i', '<S-TAB>', [[coc#pum#visible() ? coc#pum#prev(1) : "\<C-h>"]], opts)
 -- [[ Basic Autocommands ]]
 --  See `:help lua-guide-autocommands`
 
