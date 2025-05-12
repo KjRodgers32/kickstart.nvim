@@ -343,7 +343,6 @@ require('lazy').setup({
     },
   },
 
-  -- Or with configuration
   {
     'projekt0n/github-nvim-theme',
     name = 'github-theme',
@@ -357,6 +356,8 @@ require('lazy').setup({
       vim.cmd 'colorscheme github_dark_default'
     end,
   },
+
+  -- Or with configuration
 
   -- NOTE: Plugins can specify dependencies.
   --
